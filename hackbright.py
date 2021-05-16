@@ -121,6 +121,18 @@ def handle_input():
             github = args[0]
             get_student_by_github(github)
 
+        elif command == "title":
+            title = args[0]
+            get_project_by_title(title)
+
+        elif command == "grade":
+            github, title = args
+            get_grade_by_github_title(github, title)
+
+        elif command == "assign":
+            github, title, grade = args
+            assign_grade(github, title, grade)
+
         elif command == "new_student":
             first_name, last_name, github = args  # unpack!
             make_new_student(first_name, last_name, github)
